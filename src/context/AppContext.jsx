@@ -17,6 +17,7 @@ export const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState(null); // User Login on not Login
   const [isSeller, setIsSeller] = useState(false);
   const [showUserLogin, setShowUserLogin] = useState(false);
+  const [checkoutLogin, setCheckoutLogin] = useState(false);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
   const [searchQuery, setSearchQuery] = useState("");
@@ -173,6 +174,8 @@ export const AppContextProvider = ({ children }) => {
     axios,
     fetchProducts,
     setCartItems,
+    checkoutLogin,
+    setCheckoutLogin,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

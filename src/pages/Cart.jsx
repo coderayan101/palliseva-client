@@ -16,6 +16,8 @@ const Cart = () => {
     axios,
     user,
     setCartItems,
+    setShowUserLogin,
+    setCheckoutLogin,
   } = useAppContext();
 
   const [cartArray, setCartArray] = useState([]);
@@ -61,6 +63,11 @@ const Cart = () => {
 
   const placeOrder = async () => {
     try {
+      if(!user) {
+        setCheckoutLogin(true);
+        setShowUserLogin(true);
+        return;
+      }
       if (!selectedAddress) {
         return toast.error("Please select an address");
       }

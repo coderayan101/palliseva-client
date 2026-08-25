@@ -30,10 +30,10 @@ const BestSeller = () => {
 
   const filteredProducts = products.filter((product) => {
     if (activeCategory === "Vegetables") {
-      return product.category !== "Vegetable" && product.inStock;
+      return product.category !== "Vegetable";
     }
 
-    return product.category === "Fruits" && product.inStock;
+    return product.category === "Fruits";
   });
 
   return (
