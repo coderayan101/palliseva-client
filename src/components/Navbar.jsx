@@ -201,7 +201,7 @@ const Navbar = () => {
       {/* Mobile Right Side */}
       <div className="flex items-center gap-5 sm:hidden">
         {showMobileSearch ? (
-          <div className="flex items-center border border-gray-300 rounded-full px-2 py-2 w-20">
+          <div className="flex items-center border border-gray-300 rounded-full px-2 py-2 w-30">
             <Search className="w-4 h-4 text-gray-500" />
             <input
               type="text"
@@ -244,7 +244,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu */}
-        <button className="" onClick={() => setOpen(!open)} aria-label="Menu">
+        <button className="hidden" onClick={() => setOpen(!open)} aria-label="Menu">
           <img src={assets.menu_icon} alt="menu" />
         </button>
       </div>

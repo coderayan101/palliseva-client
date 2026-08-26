@@ -73,6 +73,7 @@ import vanilla_muffins_image from "./vanilla_muffins_image.png";
 import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
+import account_login from "./account_login.png"
 
 import { TruckIcon, LeafIcon, ShieldCheckIcon, TractorIcon } from "lucide-react";
 
@@ -104,6 +105,7 @@ export const assets = {
   bottom_banner_image_sm,
   add_address_image,
   box_icon,
+  account_login,
 };
 
 // export const heroSectionData = {

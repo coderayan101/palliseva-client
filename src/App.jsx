@@ -22,6 +22,7 @@ import Orders from "./pages/seller/Orders";
 import Loading from "./components/Loading";
 import About from "./pages/About";
 import MobileBottomNav from "./components/MobileBottomNav";
+import Account from "./pages/Account";
 
 const App = () => {
 
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/products/:category/:subcategory" element={<ProductCategory />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/product/:id" element={<ProductDetails />} />

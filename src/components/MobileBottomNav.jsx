@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { House, ShoppingBag, ShoppingCart, Package } from "lucide-react";
+import { House, ShoppingCart, Package, User } from "lucide-react";
 import { useAppContext } from "../context/AppContext";
 
 const MobileBottomNav = () => {
@@ -36,9 +36,9 @@ const MobileBottomNav = () => {
           <span>Cart</span>
         </NavLink>
 
-        <NavLink to="/products" className={linkClass}>
-          <ShoppingBag className="w-5 h-5 mb-1" />
-          <span>Products</span>
+        <NavLink to="/account" className={linkClass}>
+          <User className="w-5 h-5 mb-1" />
+          <span>Account</span>
         </NavLink>
       </div>
     </nav>

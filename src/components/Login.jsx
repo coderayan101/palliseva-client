@@ -12,7 +12,7 @@ const Login = () => {
     setCheckoutLogin,
   } = useAppContext();
 
-  const [state, setState] = useState("login");
+  const [state, setState] = useState(checkoutLogin ? "register" : "login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,21 +26,34 @@ const Login = () => {
         email,
         password,
       });
-      //   if (data.success) {
-      //     navigate("/");
-      //     setUser(data.user);
-      //     setShowUserLogin(false);
-      //   } else {
-      //     toast.error(data.message);
-      //   }
+
       if (data.success) {
         setUser(data.user);
         setShowUserLogin(false);
 
         if (checkoutLogin) {
-          setCheckoutLogin(false);
-          navigate("/add-address");
+          try {
+            const addressResponse = await axios.post("/api/address/get", {
+              userId: data.user._id,
+            });
+
+            if (
+              addressResponse.data.success &&
+              addressResponse.data.addresses.length > 0
+            ) {
+              // Existing customer with address
+              setCheckoutLogin(false);
+              navigate("/cart");
+            } else {
+              // Customer has no address
+              setCheckoutLogin(false);
+              navigate("/add-address");
+            }
+          } catch (error) {
+            toast.error(error.message);
+          }
         } else {
+          // Normal login
           navigate("/");
         }
       }
